@@ -15,7 +15,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full bg-white/70 backdrop-blur-md z-50"
+      className="fixed top-0 w-full bg-white backdrop-blur-md z-50"
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
