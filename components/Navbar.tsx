@@ -34,7 +34,7 @@ export default function Navbar() {
 
         {/* Links */}
         <ul
-          className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 transition-all ${
+          className={` md:flex md:items-center absolute md:static text-center bg-white w-full md:w-auto left-0 transition-all ${
             open ? 'top-16' : 'top-[-200px]'
           }`}
         >
