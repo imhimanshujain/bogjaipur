@@ -17,10 +17,15 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 w-full bg-white/70 backdrop-blur-md z-50"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <span className="text-xl font-bold">BOG Jaipur</span>
-        </Link>
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2">
+  <img
+    src="/bog-logo.png"
+    alt="BOG India Logo"
+    className="w-24 h-15 object-contain"
+  />
+</Link>
+
 
         {/* Mobile toggle */}
         <button className="md:hidden" onClick={() => setOpen(!open)}>
@@ -29,7 +34,7 @@ export default function Navbar() {
 
         {/* Links */}
         <ul
-          className={`md:flex md:items-center absolute md:static bg-white w-full md:w-auto left-0 transition-all ${
+          className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 transition-all ${
             open ? 'top-16' : 'top-[-200px]'
           }`}
         >

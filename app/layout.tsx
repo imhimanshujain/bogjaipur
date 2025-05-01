@@ -10,8 +10,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'BOG Jaipur',
-  description: 'A consortium of visionaries driving impact in Jaipur.',
+  title: 'BOG India',
+  description: 'A consortium of visionaries driving impact in India.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

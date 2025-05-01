@@ -33,7 +33,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="p-6 bg-muted rounded-lg shadow hover:shadow-lg transition-shadow"
+              className="p-6 bg-muted rounded-lg shadow hover:shadow-lg transition-shadow flex flex-col items-center"
             >
               {service.icon}
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
