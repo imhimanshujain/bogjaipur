@@ -1,51 +1,31 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
+import CTAButton from './CTAButton';
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-muted py-20 px-6">
+    <section className="bg-card px-6 py-20 text-center">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-2xl mx-auto text-center"
+        className="max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl font-bold mb-6 text-primary">Get in Touch</h2>
-        <p className="text-gray-600 mb-10">
-          Have a question or want to connect with BOG India? We'd love to hear from you.
+        <h2 className="font-bold mb-4 md:text-4xl text-3xl text-softtext">
+          Ready to Collaborate?
+        </h2>
+        <p className="mb-8 text-lg text-softtext">
+          Whether you’re a business owner, mentor, or growth partner — we’d love to connect with you.
         </p>
 
-        <form className="space-y-6">
-          <motion.input
-            type="text"
-            placeholder="Your Name"
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-            whileFocus={{ scale: 1.02 }}
-          />
-          <motion.input
-            type="email"
-            placeholder="Your Email"
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-            whileFocus={{ scale: 1.02 }}
-          />
-          <motion.textarea
-            rows={5}
-            placeholder="Your Message"
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent"
-            whileFocus={{ scale: 1.02 }}
-          ></motion.textarea>
-
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-accent  px-6 py-3 rounded-md hover:bg-orange-600 transition"
-          >
-            Submit
-          </motion.button>
-        </form>
+        <Link href="/contact">
+          <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2">
+            Contact Us
+          </CTAButton>
+        </Link>
       </motion.div>
     </section>
   )

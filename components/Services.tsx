@@ -1,21 +1,28 @@
 'use client'
-
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Briefcase, Users, Lightbulb } from 'lucide-react'
-
+import CTAButton from './CTAButton';
+const AnimatedCTA = ({ href }: { href: string }) => (
+  <Link href={href}>
+    <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2">
+      Know More
+    </CTAButton>
+  </Link>
+);
 const services = [
   {
-    icon: <Briefcase size={32} className="text-accent mb-4" />,
+    icon: <Briefcase size={32} className="mb-4 text-softtext" />,
     title: 'Business Networking',
     description: 'Connecting industry leaders under one trusted platform.',
   },
   {
-    icon: <Users size={32} className="text-accent mb-4" />,
+    icon: <Users size={32} className="mb-4 text-softtext" />,
     title: 'Collaborative Growth',
     description: 'Fostering partnerships that drive mutual success.',
   },
   {
-    icon: <Lightbulb size={32} className="text-accent mb-4" />,
+    icon: <Lightbulb size={32} className="mb-4 text-softtext" />,
     title: 'Innovative Solutions',
     description: 'Empowering businesses with cutting-edge strategies.',
   },
@@ -23,23 +30,27 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="bg-card py-20">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-primary mb-12">Our Services</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="font-bold mb-12 text-3xl text-softtext">Our Services</h2>
+        <div className="gap-8 grid md:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className="p-6 bg-muted rounded-lg shadow hover:shadow-lg transition-shadow flex flex-col items-center"
+              className="bg-muted flex flex-col hover:shadow-lg items-center p-6 rounded-lg shadow transition-shadow"
             >
               {service.icon}
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="font-semibold mb-2 text-xl">{service.title}</h3>
+              <p className="text-softtext">{service.description}</p>
             </motion.div>
           ))}
+        </div>
+                {/* CTA inside section */}
+                <div className="mt-10">
+          <AnimatedCTA href="/services" />
         </div>
       </div>
     </section>
