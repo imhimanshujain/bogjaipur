@@ -56,7 +56,7 @@ export default function TeamPage() {
           <div key={sectionIndex} className="mb-20">
             <h2 className="text-2xl font-bold mb-8">{section}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-              {members.map((member, i) => (
+              {members.map((member:any, i) => (
                 <div
                   key={`${sectionIndex}-${i}`}
                   className="text-center cursor-pointer"
