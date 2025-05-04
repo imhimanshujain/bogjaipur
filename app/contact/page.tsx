@@ -43,7 +43,7 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Phone className="text-indigo-500" />
-              <span>+91 9876543210</span>
+              <span>+91 9928914363</span>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Mail className="text-indigo-500" />

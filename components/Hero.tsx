@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import CTAButton from './CTAButton'
 export default function Hero() {
-  const fullText = 'Weelcome to BOG India'
+  const fullText = 'Weelcome to BOG'
   const [typedText, setTypedText] = useState('')
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function Hero() {
       setTypedText((prev) => prev + fullText.charAt(index))
       index++
       if (index >= fullText.length) clearInterval(timer)
-    }, 80)
+    }, 200)
     return () => clearInterval(timer)
   }, [])
 
@@ -28,7 +28,7 @@ export default function Hero() {
         <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.3 }}
           src="/hero-network.png"
           alt="Networking Background"
           className="h-full object-cover w-full"

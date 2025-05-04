@@ -10,7 +10,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'BOG India',
+  title: `Business Owner's Group`,
   description: 'A consortium of visionaries driving impact in India.',
 }
 

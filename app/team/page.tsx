@@ -5,64 +5,86 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 
 const groupedTeam = {
-  'Founding Team': [
+  'Director': [
     {
-      name: 'Neha Ashok Gupta',
-      role: 'Founder & Chairperson',
-      image: '/neha.jpeg',
-      bio: 'Neha is a performance marketer with 14+ years of experience, leading Cybrotechs and building thriving ecosystems.',
+      name: 'Gaurav Arora',
+      role: 'Director',
+      image: '/man2.jpeg',
+      bio: 'Gaurav is a dedicated professional focused on empowering BOG’s leadership ecosystem.',
+      quote: 'BOG Jaipur is where real growth, community, and vision meet.'
+    },
+    {
+      name: 'Kapil Khanna',
+      role: 'Director',
+      image: '/man1.jpeg',
+      bio: 'Kapil contributes to BOG’s growth journey with strategic insights and a collaborative mindset.',
+      quote: 'BOG Jaipur is where real growth, community, and vision meet.'
+    },
+    {
+      name: 'Sunil Kumawat',
+      role: 'Director',
+      image: '/man4.jpeg',
+      bio: 'Sunil brings practical leadership and focused intent to drive value for BOG members.',
       quote: 'BOG Jaipur is where real growth, community, and vision meet.'
     }
   ],
-  Directors: [
+  'Co-Director': [
     {
-      name: 'Aman Verma',
-      role: 'Community Director',
-      image: '/neha.jpeg',
-      bio: 'Aman connects founders and mentors to unlock potential for every BOG member.',
+      name: 'Sejal Luharuka',
+      role: 'Co-Director',
+      image: '/lady2.jpeg',
+      bio: 'Sejal brings energy and a member-first approach to the BOG community.',
       quote: 'BOG is a genuine engine of entrepreneurship in Jaipur.'
     },
     {
-      name: 'Rhea Kapoor',
-      role: 'Events Director',
+      name: 'Neha Gupta',
+      role: 'Co-Director',
       image: '/neha.jpeg',
-      bio: 'Rhea leads all events with precision, passion, and people-first planning.',
+      bio: 'Neha ensures every member experience is smooth, impactful, and memorable.',
+      quote: 'At BOG, every event becomes an opportunity for collaboration.'
+    },
+    {
+      name: 'Siddarth Makharia',
+      role: 'Co-Director',
+      image: '/man5.jpeg',
+      bio: 'Siddarth plays a key role in organizing BOG’s community engagements with flair.',
       quote: 'At BOG, every event becomes an opportunity for collaboration.'
     }
   ],
-  Advisors: [
+  'Mentor': [
     {
-      name: 'Rajiv Mehta',
-      role: 'Strategic Advisor',
-      image: '/neha.jpeg',
-      bio: 'Rajiv brings 25+ years of experience across retail, scale-ups, and angel investments.',
+      name: 'Bhawana Sugandha',
+      role: 'Mentor',
+      image: '/neha2.jpeg',
+      bio: 'Bhawana offers strategic guidance and mentorship to help BOG members scale confidently.',
       quote: 'BOG has created the perfect launchpad for bold businesses.'
     }
   ]
 }
 
 export default function TeamPage() {
-  const [activeMember, setActiveMember] = useState(null)
+  const [activeMember, setActiveMember] = useState<any>(null)
 
   return (
-    <section className="bg-white text-black py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-10">Meet Our Team</h1>
-        <p className="text-center text-gray-600 text-lg mb-20 max-w-2xl mx-auto">
+    <section className="bg-white text-black py-24 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <h1 className="text-5xl font-bold mb-10">Meet Our Team</h1>
+        <p className="text-gray-600 text-lg mb-20 max-w-2xl mx-auto">
           The hearts and minds behind BOG Jaipur — building the future of collaborative growth.
         </p>
 
         {Object.entries(groupedTeam).map(([section, members], sectionIndex) => (
-          <div key={sectionIndex} className="mb-20">
-            <h2 className="text-2xl font-bold mb-8">{section}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <div key={sectionIndex} className="mb-24">
+            <h2 className="text-3xl font-semibold text-center mb-12">{section}</h2>
+
+            <div className="flex flex-wrap justify-center gap-12">
               {members.map((member:any, i) => (
                 <div
                   key={`${sectionIndex}-${i}`}
                   className="text-center cursor-pointer"
                   onClick={() => setActiveMember(member)}
                 >
-                  <div className="mx-auto w-40 h-40 relative rounded-full overflow-hidden shadow-md mb-4">
+                  <div className="mx-auto w-40 h-40 relative rounded-full overflow-hidden shadow-md mb-4 border-2 border-gray-200">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -120,6 +142,20 @@ export default function TeamPage() {
           </div>
         </div>
       )}
+      {/* Contact CTA */}
+      <div className="mt-32 text-center bg-indigo-50 rounded-2xl px-6 py-12 max-w-4xl mx-auto shadow">
+        <h2 className="text-2xl font-bold mb-4">Want to collaborate or join the BOG core team?</h2>
+        <p className="text-gray-700 mb-6 max-w-xl mx-auto">
+          We're always looking for passionate leaders, partners, and mentors who want to make a difference. Let’s build something impactful together.
+        </p>
+        <a
+          href="/contact" // 🔁 change to your Google Form link if needed
+          className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all"
+        >
+          Contact Us
+        </a>
+      </div>
+
     </section>
   )
 }

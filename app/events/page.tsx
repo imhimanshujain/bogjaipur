@@ -1,10 +1,20 @@
-'use client'
-import { useState } from 'react'
 
+'use client'
+
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
-import CTAButton from '../../components/CTAButton';
+import CTAButton from '../../components/CTAButton'
+
 const events = [
+  {
+    title: 'Startup Success Conclave (Upcoming)',
+    date: 'August 10, 2025',
+    description: 'An upcoming high-energy conference featuring startup founders, ecosystem leaders, and growth experts. Secure your seat now!',
+    images: [
+   ],
+    upcoming: true
+  },
   {
     title: 'Business Mixer 2024',
     date: 'March 15, 2024',
@@ -12,7 +22,7 @@ const events = [
     images: [
       'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
       'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',
-    ],
+      ],
   },
   {
     title: 'Leadership Summit',
@@ -21,7 +31,7 @@ const events = [
     images: [
       'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
       'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',
-    ],
+      ],
   },
   {
     title: 'Women in Business Forum',
@@ -29,16 +39,16 @@ const events = [
     description: 'A powerful session highlighting women entrepreneurs, their journeys, challenges, and breakthroughs.',
     images: [
       'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-      'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',
+      'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',  
     ],
-  },
+  }
 ]
 
 export default function EventsPage() {
-  const [popupImages, setPopupImages] = useState<string[]>([])
-  const [activeImageIndex, setActiveImageIndex] = useState<number>(0)
+  const [popupImages, setPopupImages] = useState([])
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
 
-  const openLightbox = (images: string[], index: number) => {
+  const openLightbox = (images, index) => {
     setPopupImages(images)
     setActiveImageIndex(index)
   }
@@ -58,7 +68,6 @@ export default function EventsPage() {
 
   return (
     <div className="bg-card min-h-screen text-softtext">
-      {/* Hero */}
       <section className="bg-card px-6 py-20 text-center text-softtext">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -73,7 +82,6 @@ export default function EventsPage() {
         </p>
       </section>
 
-      {/* Events */}
       <section className="bg-gray-50 px-6 py-20">
         <div className="max-w-6xl mx-auto space-y-16">
           {events.map((event, index) => (
@@ -85,11 +93,31 @@ export default function EventsPage() {
               viewport={{ once: true }}
               className="bg-card p-6 rounded-xl shadow"
             >
-              <h2 className="font-bold mb-2 text-2xl text-softtext">{event.title}</h2>
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="font-bold text-2xl text-softtext">{event.title}</h2>
+                {event.upcoming && (
+                  <span className="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+                    UPCOMING
+                  </span>
+                )}
+              </div>
               <p className="mb-4 text-sm text-softtext">{event.date}</p>
               <p className="mb-6 text-softtext">{event.description}</p>
 
-              <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
+              {event.upcoming && (
+                <div className="mb-6">
+                  <a
+                    href="https://forms.gle/your-google-form-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-black text-white text-sm px-6 py-3 rounded-full hover:bg-gray-800 transition"
+                  >
+                    Register for this Event
+                  </a>
+                </div>
+              )}
+
+              <div className="gap-4 grid grid-cols-1 sm:grid-cols-2">
                 {event.images.map((url, i) => (
                   <img
                     key={i}
@@ -105,26 +133,31 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
       {popupImages.length > 0 && (
-        <div className="bg-card/90 fixed flex inset-0 items-center justify-center z-[1000]">
-          <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2" onClick={closeLightbox}>
-            <X size={32} />
-          </CTAButton>
-
-          <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2" onClick={prevImage}>
-            <ChevronLeft size={48} />
-          </CTAButton>
-
-          <img
-            src={popupImages[activeImageIndex]}
-            alt="Full Preview"
-            className="max-h-[90vh] max-w-full rounded shadow-lg"
-          />
-
-          <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2" onClick={nextImage}>
-            <ChevronRight size={48} />
-          </CTAButton>
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4 py-6">
+          <div className="relative w-full max-w-3xl bg-white rounded-lg overflow-hidden shadow-xl">
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 text-gray-600 hover:text-black z-10"
+            >
+              <X size={28} />
+            </button>
+            <div className="flex items-center justify-between px-4 py-2 sm:px-6">
+              <button onClick={prevImage} className="text-gray-600 hover:text-black">
+                <ChevronLeft size={32} />
+              </button>
+              <div className="w-full flex items-center justify-center">
+                <img
+                  src={popupImages[activeImageIndex]}
+                  alt="Full Preview"
+                  className="max-h-[75vh] object-contain rounded"
+                />
+              </div>
+              <button onClick={nextImage} className="text-gray-600 hover:text-black">
+                <ChevronRight size={32} />
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
