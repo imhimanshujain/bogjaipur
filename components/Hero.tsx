@@ -28,7 +28,7 @@ export default function Hero() {
         <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 1 }}
           src="/hero-network.png"
           alt="Networking Background"
           className="h-full object-cover w-full"

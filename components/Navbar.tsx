@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 
-const links = ['About', 'Services', 'Events', 'Team', 'Contact']
+const links = ['About', 'Services', 'Events', 'Team','News','Contact']
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

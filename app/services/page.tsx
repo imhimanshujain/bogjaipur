@@ -1,117 +1,108 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Briefcase, Users, Lightbulb, TrendingUp, Handshake, Target } from 'lucide-react'
+import { Megaphone, UsersRound, Lightbulb, Rocket, ShieldCheck, BadgeCheck } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 const services = [
   {
-    icon: <Briefcase size={36} className="mb-4 text-softtext" />,
-    title: 'Business Networking',
-    description:
-      'We create opportunities for members to build long-lasting business relationships and grow their professional networks.',
+    icon: <Megaphone className="w-10 h-10 text-indigo-600" />,
+    title: 'Digital Marketing',
+    desc: 'From Google Ads to Instagram Funnels, we help you target the right audience with powerful campaigns that convert.'
   },
   {
-    icon: <Users size={36} className="mb-4 text-softtext" />,
-    title: 'Member Referrals',
-    description:
-      'Referrals are at the heart of our ecosystem. Members actively refer trusted connections, ensuring high conversion and trust.',
+    icon: <UsersRound className="w-10 h-10 text-emerald-600" />,
+    title: 'Networking Events',
+    desc: 'Connect, collaborate, and grow through exclusive meetups, open pitch sessions, and curated mixers.'
   },
   {
-    icon: <Lightbulb size={36} className="mb-4 text-softtext" />,
-    title: 'Knowledge Exchange',
-    description:
-      'We conduct workshops, guest talks, and learning sessions to upskill our members and fuel personal and professional growth.',
+    icon: <Lightbulb className="w-10 h-10 text-yellow-500" />,
+    title: 'Mentorship Programs',
+    desc: 'Get paired with industry leaders who guide you with real-world strategies, experience, and insights.'
   },
   {
-    icon: <Handshake size={36} className="mb-4 text-softtext" />,
-    title: 'Strategic Alliances',
-    description:
-      'We help businesses find the right partners to collaborate with — from investors to solution providers to strategic vendors.',
+    icon: <Rocket className="w-10 h-10 text-red-500" />,
+    title: 'Startup Launch Support',
+    desc: 'From brand identity to GTM, we provide end-to-end support for startups ready to scale fast.'
   },
   {
-    icon: <TrendingUp size={36} className="mb-4 text-softtext" />,
-    title: 'Growth Acceleration',
-    description:
-      'Accelerate your business growth through collective visibility, shared resources, and a community that genuinely wants you to win.',
+    icon: <ShieldCheck className="w-10 h-10 text-blue-500" />,
+    title: 'Business Compliance Help',
+    desc: 'We connect you with legal and financial advisors to ensure your business remains protected and compliant.'
   },
   {
-    icon: <Target size={36} className="mb-4 text-softtext" />,
-    title: 'Goal Alignment',
-    description:
-      'Our structured formats ensure members stay focused on what matters, helping them align their growth goals with actual action.',
-  },
+    icon: <BadgeCheck className="w-10 h-10 text-teal-500" />,
+    title: 'Partnership Matchmaking',
+    desc: 'Looking for a co-founder, investor, or partner? We’ve got a powerful business matchmaking engine.'
+  }
 ]
 
 export default function ServicesPage() {
-  return (
-    <div className="bg-card min-h-screen text-softtext">
-      {/* Hero */}
-      <section className="bg-card px-6 py-20 text-center text-softtext">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="font-bold mb-4 md:text-6xl text-4xl"
-        >
-          What We Offer
-        </motion.h1>
-        <p className="max-w-2xl mx-auto text-lg text-softtext/80">
-          Designed to empower entrepreneurs and business leaders through high-impact services.
-        </p>
-      </section>
+  const router = useRouter()
 
-      {/* Services Grid */}
-      <section className="bg-gray-50 px-6 py-20">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-bold mb-10 text-3xl text-softtext">Our Core Services</h2>
-          <div className="gap-8 grid md:grid-cols-3 text-left">
-            {services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-card hover:shadow-lg p-6 rounded-xl shadow"
-              >
-                {service.icon}
-                <h3 className="font-semibold mb-2 text-xl">{service.title}</h3>
-                <p className="text-softtext">{service.description}</p>
-              </motion.div>
-            ))}
+  return (
+    <section className="bg-white text-black py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Intro */}
+        <h1 className="text-5xl font-bold text-center mb-6">Our Services</h1>
+        <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-16">
+          Everything we offer is designed to help business owners thrive — through community, clarity, and action.
+        </p>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((s, i) => (
+            <div
+              key={i}
+              className="rounded-3xl p-8 border bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300"
+            >
+              <div className="flex justify-center mb-4">{s.icon}</div>
+              <h3 className="text-xl font-semibold text-center mb-2">{s.title}</h3>
+              <p className="text-center text-gray-600 text-sm">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* 📸 Image Showcase */}
+        <div className="my-24 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
+            Event Photo
+          </div>
+          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
+            Campaign Sample
+          </div>
+          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
+            Mentorship Session
           </div>
         </div>
-      </section>
 
-      {/* Testimonials / Benefits */}
-      <section className="bg-card px-6 py-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-bold mb-6 text-3xl text-softtext">Why Members Love BOG</h2>
-          <p className="mb-10 text-lg text-softtext">
-            Our members don’t just receive services, they experience transformation in how they do business, connect, and grow.
-          </p>
-          <ul className="list-disc list-inside max-w-2xl mx-auto space-y-4 text-left text-softtext">
-            <li>Weekly networking formats that ensure visibility</li>
-            <li>Goal tracking & achievement system</li>
-            <li>Private WhatsApp & resource sharing groups</li>
-            <li>Monthly knowledge & guest speaker sessions</li>
-            <li>Referral-based leads with high conversion rates</li>
-            <li>Opportunities to lead, speak & mentor</li>
-          </ul>
+        {/* ✨ Filler: Testimonial Strip */}
+        <div className="bg-indigo-50 py-12 px-6 rounded-2xl text-center mb-20 shadow-md">
+          <h3 className="text-2xl font-semibold italic text-indigo-800 mb-2">
+            “Our brand visibility skyrocketed after joining BOG’s marketing workshops.”
+          </h3>
+          <p className="text-sm text-gray-600">– Priya Sharma, Founder, CraftHaus</p>
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="bg-card py-20 text-center text-softtext">
-        <h2 className="font-bold mb-4 md:text-4xl text-3xl">Let’s Build Something Bigger</h2>
-        <p className="mb-6 text-lg text-softtext/80">Connect with us and unlock the full potential of your business journey.</p>
-        <a
-          href="/contact"
-          className="bg-card font-semibold hover:bg-card inline-block px-8 py-3 rounded-md text-softtext transition"
-        >
-          Contact Us
-        </a>
-      </section>
-    </div>
+        {/* 🚀 Why Work With Us */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-3xl font-bold mb-4">Why Work With BOG Jaipur?</h2>
+          <p className="text-gray-700">
+            We don’t just provide services — we create success stories. You get strategic connections, 
+            proven playbooks, and a vibrant community that wants to see you win.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-4">Ready to take your business to the next level?</h3>
+          <button
+            onClick={() => router.push('/contact')}
+            className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all duration-300"
+          >
+            Let’s Connect →
+          </button>
+        </div>
+      </div>
+    </section>
   )
 }

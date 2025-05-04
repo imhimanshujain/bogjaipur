@@ -1,58 +1,93 @@
 'use client'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Briefcase, Users, Lightbulb } from 'lucide-react'
-import CTAButton from './CTAButton';
-const AnimatedCTA = ({ href }: { href: string }) => (
-  <Link href={href}>
-    <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2">
-      Know More
-    </CTAButton>
-  </Link>
-);
+
+import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
+import { MonitorSmartphone, UsersRound, Rocket } from 'lucide-react'
+
 const services = [
   {
-    icon: <Briefcase size={32} className="mb-4 text-softtext" />,
-    title: 'Business Networking',
-    description: 'Connecting industry leaders under one trusted platform.',
+    title: 'Digital Marketing',
+    description: 'Grrow your brand with performance-driven strategies.',
+    icon: <MonitorSmartphone className="w-14 h-14 text-indigo-600 drop-shadow-lg" />
   },
   {
-    icon: <Users size={32} className="mb-4 text-softtext" />,
-    title: 'Collaborative Growth',
-    description: 'Fostering partnerships that drive mutual success.',
+    title: 'Networking Events',
+    description: 'Coonnect with Jaipur’s finest business owners.',
+    icon: <UsersRound className="w-14 h-14 text-emerald-600 drop-shadow-lg" />
   },
   {
-    icon: <Lightbulb size={32} className="mb-4 text-softtext" />,
-    title: 'Innovative Solutions',
-    description: 'Empowering businesses with cutting-edge strategies.',
-  },
+    title: 'Mentorship',
+    description: 'Geet guidance from top-tier industry experts.',
+    icon: <Rocket className="w-14 h-14 text-yellow-500 drop-shadow-lg" />
+  }
 ]
 
 export default function Services() {
+  const router = useRouter()
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+  const [typedText, setTypedText] = useState('')
+  const intervalRef = useRef(null)
+
+  useEffect(() => {
+    if (hoveredIndex === null) {
+      clearInterval(intervalRef.current)
+      setTypedText('')
+      return
+    }
+
+    const desc = services[hoveredIndex].description
+    let index = 0
+
+    setTypedText('') // Reset before typing
+
+    clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      if (index < desc.length) {
+        setTypedText((prev) => prev + desc.charAt(index))
+        index++
+      } else {
+        clearInterval(intervalRef.current)
+      }
+    }, 40)
+
+    return () => clearInterval(intervalRef.current)
+  }, [hoveredIndex])
+
   return (
-    <section id="services" className="bg-card py-20">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="font-bold mb-12 text-3xl text-softtext">Our Services</h2>
-        <div className="gap-8 grid md:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-muted flex flex-col hover:shadow-lg items-center p-6 rounded-lg shadow transition-shadow"
-            >
-              {service.icon}
-              <h3 className="font-semibold mb-2 text-xl">{service.title}</h3>
-              <p className="text-softtext">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
-                {/* CTA inside section */}
-                <div className="mt-10">
-          <AnimatedCTA href="/services" />
-        </div>
+    <section className="bg-gradient-to-br from-white to-gray-100 py-24 px-6 text-black">
+      <h2 className="text-5xl font-bold text-center mb-16">What We Offer</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        {services.map((service, i) => (
+          <div
+            key={i}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => router.push('/services')}
+            className="cursor-pointer group p-10 rounded-3xl shadow-2xl bg-white border hover:scale-[1.03] transition-all duration-300 relative overflow-hidden min-h-[260px]"
+          >
+            <div className="flex justify-center mb-6">{service.icon}</div>
+            <h3 className="text-2xl font-bold text-center mb-6">{service.title}</h3>
+
+            {hoveredIndex === i && (
+              <p className="text-center text-gray-700 font-medium h-14">
+                {typedText}
+                <span className="animate-blink">|</span>
+              </p>
+            )}
+          </div>
+        ))}
       </div>
+
+      <style jsx>{`
+        .animate-blink {
+          animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+          from, to { opacity: 0; }
+          50% { opacity: 1; }
+        }
+      `}</style>
     </section>
   )
 }
