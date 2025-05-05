@@ -55,7 +55,7 @@ const groupedTeam = {
     {
       name: 'Bhawana Sugandha',
       role: 'Mentor',
-      image: '/neha2.jpeg',
+      image: '/lady2.jpeg',
       bio: 'Bhawana offers strategic guidance and mentorship to help BOG members scale confidently.',
       quote: 'BOG has created the perfect launchpad for bold businesses.'
     }
