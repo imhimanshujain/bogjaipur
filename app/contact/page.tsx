@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-gray-700">
               <MapPin className="text-indigo-500" />
-              <span>BOG Office, Jaipur, Rajasthan</span>
+              <span>BOG CITY NETWORK LLP, E-2/269, roshanpath, chitrakoot,Jaipur, Rajasthan</span>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Phone className="text-indigo-500" />
@@ -66,15 +66,15 @@ export default function ContactPage() {
 
           {/* Google Map */}
           <div className="w-full h-72 overflow-hidden rounded-2xl border">
-            <iframe
-              title="BOG Jaipur Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.719618206365!2d75.80067461504403!3d26.860994983152938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3102b7c7d65%3A0x2a5cb36af9b12d5d!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1656523825794!5m2!1sen!2sin"
+
+            <iframe         
+             title="BOG Jaipur Location"    
               width="100%"
               height="100%"
               style={{ border: 0 }}
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+              referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3557.9712954785327!2d75.7314180754392!3d26.904406076652112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDU0JzE1LjkiTiA3NcKwNDQnMDIuNCJF!5e0!3m2!1sen!2sin!4v1746643347779!5m2!1sen!2sin" 
+              ></iframe>
           </div>
         </div>
       </div>
