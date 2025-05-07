@@ -19,7 +19,7 @@ export default function Contact() {
         </h2>
         <p className="mb-8 text-lg text-softtext">
           Whether you’re a business owner, mentor, or growth partner — we’d love to connect with you.
-        </p>
+        </p>  
 
         <Link href="/contact">
           <CTAButton className="bg-accent text-primary animate-pulse-scale hover:scale-105 mt-6 bg-card rounded-lg text-softtext px-6 animate-pulse transition py-2">

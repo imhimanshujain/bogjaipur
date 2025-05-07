@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -19,11 +19,16 @@ const events = [
     date: 'April 19, 2025',
     description: 'An energetic networking event where over 150+ entrepreneurs came together to connect, collaborate, and create new business opportunities.',
     images: [
+      '/event1_6.jpeg',
+      '/event1_7.jpeg',
+      '/event1_8.jpeg',
+      '/event1_9.jpeg',
       '/event1_1.jpeg',
       '/event1_2.jpeg',
       '/event1_3.jpeg',
       '/event1_4.jpeg',
       '/event1_5.jpeg',
+
     ],
   }
 ]
@@ -80,7 +85,7 @@ export default function EventsPage() {
               <div className="flex items-center justify-between mb-2">
                 <h2 className="font-bold text-2xl text-softtext">{event.title}</h2>
                 {event.upcoming && (
-                  <span className="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">
                     UPCOMING
                   </span>
                 )}
@@ -120,12 +125,12 @@ export default function EventsPage() {
 
               {event.images.length > 2 && (
                 <div className="mt-4 text-center">
-                  <button
+                  <motion.button
                     onClick={() => openLightbox(event.images, 0)}
                     className="inline-block bg-black text-white text-sm px-6 py-2 rounded-full hover:bg-gray-800 transition"
                   >
                     View All Photos
-                  </button>
+                  </motion.button>
                 </div>
               )}
             </motion.div>

@@ -1,4 +1,9 @@
 'use client'
+import { motion } from 'framer-motion'
+import CountUp from '@/components/CountUp'
+import Link from 'next/link'
+import Image from 'next/image'
+import { ChevronRight, ArrowRight } from 'lucide-react'
 
 import { Mail, MapPin, Phone, Send, Linkedin, Instagram, Twitter } from 'lucide-react'
 import { useRouter } from 'next/navigation'
@@ -9,28 +14,28 @@ export default function ContactPage() {
   return (
     <section className="bg-white text-black py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-10">Contact Us</h1>
+        <motion.h1 className="text-5xl font-bold text-center mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>Contact Us</motion.h1>
         <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-          Have questions? Want to explore opportunities with BOG Jaipur? We're just a message away.
+          Have questions? Want to explore opportunities with BOG? We're just a message away.
         </p>
 
         {/* Fillers */}
-        <div className="text-center bg-indigo-50 rounded-2xl py-10 px-6 mb-20 shadow">
-          <h2 className="text-2xl font-semibold mb-2">Join a movement of entrepreneurs.</h2>
+        <div className="text-center bg-gray-50 rounded-2xl py-10 px-6 mb-20 shadow">
+          <motion.h2 className="text-2xl font-semibold mb-2" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Join a movement of entrepreneurs.</motion.h2>
           <p className="text-gray-700 max-w-xl mx-auto mb-4">
-            Whether you’re building your first product, expanding across cities, or just craving meaningful business relationships — BOG Jaipur is the place.
+            Whether you’re building your first product, expanding across cities, or just craving meaningful business relationships — BOG is the place.
           </p>
-          <p className="text-sm text-indigo-700 italic mb-6">
+          <p className="text-sm text-gray-700 italic mb-6">
             Let’s build something incredible. Together.
           </p>
-          <a
+          <motion.a
             href="https://forms.gle/your-google-form-link" // 🔁 Replace this with your actual Google Form link
             target="_blank"
-            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all"
+            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
             rel="noopener noreferrer"
           >
             <Send size={18} /> Fill the Google Form
-          </a>
+          </motion.a>
         </div>
 
         {/* Contact Info */}
@@ -42,11 +47,11 @@ export default function ContactPage() {
               <span>BOG CITY NETWORK LLP, E-2/269, roshanpath, chitrakoot,Jaipur, Rajasthan</span>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
-              <Phone className="text-indigo-500" />
+              <Phone className="text-gray-500" />
               <span>+91 9928914363</span>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
-              <Mail className="text-indigo-500" />
+              <Mail className="text-gray-500" />
               <span>connect@bogjaipur.in</span>
             </div>
 
@@ -78,6 +83,55 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </section>
+    
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-50 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2 className="text-4xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Impact At A Glance</motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <p className="text-5xl font-bold text-gray-600">200+</p>
+              <p className="text-gray-700">Events Hosted</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold text-gray-600">500+</p>
+              <p className="text-gray-700">Members Networked</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold text-gray-600">50+</p>
+              <p className="text-gray-700">Expert Speakers</p>
+            </div>
+          </div>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/events" className="inline-flex items-center text-sm font-semibold text-gray-800 hover:underline">
+            View All Events <ArrowRight className="ml-1" />
+          </Link>
+        </div>
+      </section>
+      <div className="py-10 px-6 bg-gray-50 text-center italic text-gray-700">
+        “Coming together is a beginning; keeping together is progress; working together is success.” — Henry Ford
+      </div>
+
+      {/* Gallery */}
+      <section className="py-20 bg-white px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 className="text-4xl font-semibold mb-6 text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Gallery</motion.h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[5,6,7,8].map(i => (
+              <div key={i} className="h-48 bg-gray-200 relative overflow-hidden rounded-lg overflow-hidden relative">
+                <Image src={`/event1_${i}.jpeg`} alt="Gallery" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/events" className="inline-flex items-center text-sm font-semibold text-gray-800 hover:underline">
+            View All Events <ArrowRight className="ml-1" />
+          </Link>
+        </div>
+      </section>
+
+      </section>
   )
 }

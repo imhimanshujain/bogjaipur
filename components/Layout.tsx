@@ -14,9 +14,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <>
       <Navbar />
       <main className="pt-20">{children}</main>
-      <footer className="py-8 text-center text-sm text-softtext">
-        © {new Date().getFullYear()} BOG. All rights reserved.
-      </footer>
+
     </>
   )
 }

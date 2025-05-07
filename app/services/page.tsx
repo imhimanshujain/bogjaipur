@@ -1,11 +1,16 @@
 'use client'
+import { motion } from 'framer-motion'
+import CountUp from '@/components/CountUp'
+import Link from 'next/link'
+import Image from 'next/image'
 
 import { Megaphone, UsersRound, Lightbulb, Rocket, ShieldCheck, BadgeCheck } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { ChevronRight, ArrowRight } from 'lucide-react'
 
 const services = [
   {
-    icon: <Megaphone className="w-10 h-10 text-indigo-600" />,
+    icon: <Megaphone className="w-10 h-10 text-gray-600" />,
     title: 'Digital Marketing',
     desc: 'From Google Ads to Instagram Funnels, we help you target the right audience with powerful campaigns that convert.'
   },
@@ -43,7 +48,7 @@ export default function ServicesPage() {
     <section className="bg-white text-black py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Intro */}
-        <h1 className="text-5xl font-bold text-center mb-6">Our Services</h1>
+        <motion.h1 className="text-5xl font-bold text-center mb-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>Our Services</motion.h1>
         <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-16">
           Everything we offer is designed to help business owners thrive — through community, clarity, and action.
         </p>
@@ -76,8 +81,8 @@ export default function ServicesPage() {
         </div>
 
         {/* ✨ Filler: Testimonial Strip */}
-        <div className="bg-indigo-50 py-12 px-6 rounded-2xl text-center mb-20 shadow-md">
-          <h3 className="text-2xl font-semibold italic text-indigo-800 mb-2">
+        <div className="bg-gray-50 py-12 px-6 rounded-2xl text-center mb-20 shadow-md">
+          <h3 className="text-2xl font-semibold italic text-gray-800 mb-2">
             “Our brand visibility skyrocketed after joining BOG’s marketing workshops.”
           </h3>
           <p className="text-sm text-gray-600">– Priya Sharma, Founder, CraftHaus</p>
@@ -85,7 +90,7 @@ export default function ServicesPage() {
 
         {/* 🚀 Why Work With Us */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold mb-4">Why Work With BOG Jaipur?</h2>
+          <motion.h2 className="text-3xl font-bold mb-4" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Why Work With BOG?</motion.h2>
           <p className="text-gray-700">
             We don’t just provide services — we create success stories. You get strategic connections, 
             proven playbooks, and a vibrant community that wants to see you win.
@@ -103,6 +108,55 @@ export default function ServicesPage() {
           </button>
         </div>
       </div>
-    </section>
+    
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-50 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2 className="text-4xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Impact At A Glance</motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <p className="text-5xl font-bold text-gray-600">200+</p>
+              <p className="text-gray-700">Events Hosted</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold text-gray-600">500+</p>
+              <p className="text-gray-700">Members Networked</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold text-gray-600">50+</p>
+              <p className="text-gray-700">Expert Speakers</p>
+            </div>
+          </div>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/events" className="inline-flex items-center text-sm font-semibold text-gray-800 hover:underline">
+            View All Events <ArrowRight className="ml-1" />
+          </Link>
+        </div>
+      </section>
+      <div className="py-10 px-6 bg-gray-50 text-center italic text-gray-700">
+        “The strength of the team is each individual member.” — Phil Jackson
+      </div>
+
+      {/* Gallery */}
+      <section className="py-20 bg-white px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 className="text-4xl font-semibold mb-6 text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Gallery</motion.h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[1,2,3,4].map(i => (
+              <div key={i} className="h-48 bg-gray-200 relative overflow-hidden rounded-lg overflow-hidden relative">
+                <Image src={`/images/placeholder${i}.jpg`} alt="Gallery" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/events" className="inline-flex items-center text-sm font-semibold text-gray-800 hover:underline">
+            View All Events <ArrowRight className="ml-1" />
+          </Link>
+        </div>
+      </section>
+
+      </section>
   )
 }

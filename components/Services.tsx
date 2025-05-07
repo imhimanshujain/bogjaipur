@@ -8,7 +8,7 @@ const services = [
   {
     title: 'Digital Marketing',
     description: 'Grrow your brand with performance-driven strategies.',
-    icon: <MonitorSmartphone className="w-14 h-14 text-indigo-600 drop-shadow-lg" />
+    icon: <MonitorSmartphone className="w-14 h-14 text-gray-600 drop-shadow-lg" />
   },
   {
     title: 'Networking Events',
