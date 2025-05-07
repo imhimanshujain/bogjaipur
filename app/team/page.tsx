@@ -84,7 +84,7 @@ export default function TeamPage() {
                   className="text-center cursor-pointer"
                   onClick={() => setActiveMember(member)}
                 >
-                  <div className="mx-auto w-40 h-40 relative rounded-full overflow-hidden shadow-md mb-4 border-2 border-gray-200">
+                  <div className="mx-auto w-60 h-60 relative py-[150px] rounded-2xl overflow-hidden shadow-md mb-4 border-2 border-gray-200">
                     <Image
                       src={member.image}
                       alt={member.name}

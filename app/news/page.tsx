@@ -8,29 +8,29 @@ const mediaUpdates = [
   {
     type: 'News Article',
     icon: <Newspaper className="w-7 h-7 text-indigo-600" />,
-    title: 'BOG Jaipur featured in Times of India',
-    desc: 'Our monthly business meet was covered in TOI highlighting collaboration models among Jaipur entrepreneurs.',
-    date: 'April 28, 2025',
-    image: '/hero-network.png',
-    link: '#'
+    title: 'BOG launch news',
+    desc: 'Business Owners Group (BOG) scheduled launch was featured in Dainik Bhaskar as a disruptive platform to empower local entrepreneurs.',
+    date: 'April 15, 2025',
+    image: '/news1.webp',
+    link: 'https://dainik.bhaskar.com/Wkg2cVy8BSb'
   },
   {
-    type: 'Podcast',
-    icon: <Mic className="w-7 h-7 text-green-600" />,
-    title: 'Founder Interview: Building BOG Jaipur',
-    desc: 'Neha Ashok Gupta shares her vision behind building Rajasthan’s most active business group.',
-    date: 'March 10, 2025',
-    image: '/hero-network.png',
-    link: '#'
+    type: 'News Article',
+    icon: <Newspaper className="w-7 h-7 text-indigo-600" />,
+    title: 'BOG event news',
+    desc: 'Business Owners Group (BOG) Jaipur was featured for its official launch on April 19, 2025, as a platform to unite and empower local entrepreneurs.',
+    date: 'April 19, 2025',
+    image: '/news3.png',
+    link: 'https://dainik.bhaskar.com/tRk427fiISb'
   },
   {
     type: 'Event Video',
     icon: <Video className="w-7 h-7 text-red-500" />,
-    title: 'Highlights from Startup Connect 2025',
-    desc: 'Watch the energy and engagement from our recent networking summit — packed with startups and VCs.',
-    date: 'February 22, 2025',
-    image: '/hero-network.png',
-    link: '#'
+    title: 'Highlights from BOG Kickoff 2025',
+    desc: 'Watch the video of BOG being featured in nation news 24  .',
+    date: 'April 20, 2025',
+    image: '/news2.png',
+    link: 'https://youtu.be/NyKbuWLPiMk?si=Fnjq9a7k5at1mEnw'
   }
 ]
 
@@ -52,7 +52,7 @@ export default function NewsPage() {
               key={index}
               className="rounded-3xl overflow-hidden border bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300"
             >
-              <div className="h-48 relative">
+              <div className="h-55 relative">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -72,9 +72,11 @@ export default function NewsPage() {
                 <p className="text-sm text-gray-600 mb-4">{item.desc}</p>
                 <a
                   href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   className="inline-block text-sm font-medium text-indigo-600 hover:underline"
                 >
-                  Read More →
+                  {item.type =='Event Video'?'Watch Now →' : 'Read More →'}
                 </a>
               </div>
             </div>

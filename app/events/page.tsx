@@ -1,45 +1,29 @@
-
 'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import CTAButton from '../../components/CTAButton'
+import Image from 'next/image'
 
 const events = [
   {
     title: 'Startup Success Conclave (Upcoming)',
     date: 'August 10, 2025',
     description: 'An upcoming high-energy conference featuring startup founders, ecosystem leaders, and growth experts. Secure your seat now!',
-    images: [
-   ],
+    images: [],
     upcoming: true
   },
   {
-    title: 'Business Mixer 2024',
-    date: 'March 15, 2024',
+    title: 'BOG Launch Event',
+    date: 'April 19, 2025',
     description: 'An energetic networking event where over 150+ entrepreneurs came together to connect, collaborate, and create new business opportunities.',
     images: [
-      'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-      'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',
-      ],
-  },
-  {
-    title: 'Leadership Summit',
-    date: 'January 28, 2024',
-    description: 'A full-day summit with talks from business leaders, startup founders, and domain experts — focused on leadership and vision.',
-    images: [
-      'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-      'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',
-      ],
-  },
-  {
-    title: 'Women in Business Forum',
-    date: 'December 12, 2023',
-    description: 'A powerful session highlighting women entrepreneurs, their journeys, challenges, and breakthroughs.',
-    images: [
-      'https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-      'https://images.unsplash.com/photo-1613323593608-abc90fec84ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGltYWdlfGVufDB8fDB8fHww',  
+      '/event1_1.jpeg',
+      '/event1_2.jpeg',
+      '/event1_3.jpeg',
+      '/event1_4.jpeg',
+      '/event1_5.jpeg',
     ],
   }
 ]
@@ -118,16 +102,32 @@ export default function EventsPage() {
               )}
 
               <div className="gap-4 grid grid-cols-1 sm:grid-cols-2">
-                {event.images.map((url, i) => (
-                  <img
+                {(event.images.slice(0, 2)).map((url, i) => (
+                  <div
                     key={i}
-                    src={url}
-                    alt={`Event ${index + 1} image ${i + 1}`}
-                    className="cursor-pointer h-64 hover:scale-105 object-cover rounded-lg shadow transition w-full"
+                    className="relative w-full h-64 cursor-pointer hover:scale-105 transition rounded-lg overflow-hidden shadow"
                     onClick={() => openLightbox(event.images, i)}
-                  />
+                  >
+                    <Image
+                      src={url}
+                      alt={`Event ${index + 1} image ${i + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 ))}
               </div>
+
+              {event.images.length > 2 && (
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={() => openLightbox(event.images, 0)}
+                    className="inline-block bg-black text-white text-sm px-6 py-2 rounded-full hover:bg-gray-800 transition"
+                  >
+                    View All Photos
+                  </button>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -146,11 +146,12 @@ export default function EventsPage() {
               <button onClick={prevImage} className="text-gray-600 hover:text-black">
                 <ChevronLeft size={32} />
               </button>
-              <div className="w-full flex items-center justify-center">
-                <img
+              <div className="relative w-full h-[75vh]">
+                <Image
                   src={popupImages[activeImageIndex]}
                   alt="Full Preview"
-                  className="max-h-[75vh] object-contain rounded"
+                  fill
+                  className="object-contain rounded"
                 />
               </div>
               <button onClick={nextImage} className="text-gray-600 hover:text-black">
