@@ -34,7 +34,7 @@ export default function ContactPage() {
             className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
             rel="noopener noreferrer"
           >
-            <Send size={18} /> Contact us Now!
+            <Send size={18} /> Join us now!
           </motion.a>
         </div>
 

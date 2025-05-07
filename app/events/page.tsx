@@ -7,13 +7,13 @@ import CTAButton from '../../components/CTAButton'
 import Image from 'next/image'
 
 const events = [
-  {
-    title: 'Startup Success Conclave (Upcoming)',
-    date: 'August 10, 2025',
-    description: 'An upcoming high-energy conference featuring startup founders, ecosystem leaders, and growth experts. Secure your seat now!',
-    images: [],
-    upcoming: true
-  },
+  // {
+  //   title: 'Startup Success Conclave (Upcoming)',
+  //   date: 'August 10, 2025',
+  //   description: 'An upcoming high-energy conference featuring startup founders, ecosystem leaders, and growth experts. Secure your seat now!',
+  //   images: [],
+  //   upcoming: true
+  // },
   {
     title: 'BOG Launch Event',
     date: 'April 19, 2025',
