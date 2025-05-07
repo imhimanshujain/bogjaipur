@@ -52,7 +52,7 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Mail className="text-gray-500" />
-              <span>connect@bogjaipur.in</span>
+              <span>bogjaipur@gmail.com</span>
             </div>
 
             {/* Social Icons */}

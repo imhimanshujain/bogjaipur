@@ -65,15 +65,22 @@ export default function ServicesPage() {
 
         {/* 📸 Image Showcase */}
         <div className="my-24 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
-            Event Photo
-          </div>
-          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
-            Campaign Sample
-          </div>
-          <div className="h-72 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 text-lg font-medium">
-            Mentorship Session
-          </div>
+          {[
+            { src: '/event1_12.jpeg', alt: 'Team Photo' },
+            { src: '/event1_14.jpeg', alt: 'Networking Event' },
+            { src: '/event1_3.jpeg', alt: "Founders' Meet" }
+          ].map(({ src, alt }, idx) => (
+            <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
+
+
+              />
+            </div>
+          ))}
         </div>
 
         {/* ✨ Filler: Testimonial Strip */}
@@ -81,7 +88,7 @@ export default function ServicesPage() {
           <h3 className="text-2xl font-semibold italic text-gray-800 mb-2">
             “Our brand visibility skyrocketed after joining BOG’s marketing workshops.”
           </h3>
-          <p className="text-sm text-gray-600">– Priya Sharma, Founder, CraftHaus</p>
+          <p className="text-sm text-gray-600">– BOG Business member</p>
         </div>
 
         {/* 🚀 Why Work With Us */}

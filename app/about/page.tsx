@@ -40,22 +40,22 @@ export default function AboutUs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-  {[
-    { src: '/event1_12.jpeg', alt: 'Team Photo' },
-    { src: '/event1_14.jpeg', alt: 'Networking Event' },
-    { src: '/event1_3.jpeg', alt: "Founders' Meet" }
-  ].map(({ src, alt }, idx) => (
-    <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
+          {[
+            { src: '/event1_12.jpeg', alt: 'Team Photo' },
+            { src: '/event1_14.jpeg', alt: 'Networking Event' },
+            { src: '/event1_3.jpeg', alt: "Founders' Meet" }
+          ].map(({ src, alt }, idx) => (
+            <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
 
 
-      />
-    </div>
-  ))}
+              />
+            </div>
+          ))}
 </div>
 
         {/* Filler Quote */}
