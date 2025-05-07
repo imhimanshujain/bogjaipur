@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Linkedin, Twitter, Instagram } from 'lucide-react'
+import { Linkedin, Twitter, Instagram, Facebook } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -26,9 +26,9 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Connect With Us</h4>
           <div className="flex space-x-4">
-            <Link href="#" className="hover:text-white"><Linkedin size={24} /></Link>
-            <Link href="#" className="hover:text-white"><Instagram size={24} /></Link>
-            <Link href="#" className="hover:text-white"><Twitter size={24} /></Link>
+            <Link href="https://www.facebook.com/bogjaipur" className="hover:text-white"><Facebook size={24} /></Link>
+            <Link href="https://www.instagram.com/bogjaipur?igsh=NmhmbmlpaDVvd2tv" className="hover:text-white"><Instagram size={24} /></Link>
+            {/* <Link href="#" className="hover:text-white"><Twitter size={24} /></Link> */}
           </div>
         </div>
       </div>

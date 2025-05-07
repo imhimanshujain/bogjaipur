@@ -9,11 +9,7 @@ import { useRouter } from 'next/navigation'
 import { ChevronRight, ArrowRight } from 'lucide-react'
 
 const services = [
-  {
-    icon: <Megaphone className="w-10 h-10 text-gray-600" />,
-    title: 'Digital Marketing',
-    desc: 'From Google Ads to Instagram Funnels, we help you target the right audience with powerful campaigns that convert.'
-  },
+
   {
     icon: <UsersRound className="w-10 h-10 text-emerald-600" />,
     title: 'Networking Events',
@@ -114,16 +110,16 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2 className="text-4xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Impact At A Glance</motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-5xl font-bold text-gray-600">200+</p>
+             <div>
+              <p className="text-5xl font-bold text-gray-600">20+</p>
               <p className="text-gray-700">Events Hosted</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">500+</p>
+              <p className="text-5xl font-bold text-gray-600">100+</p>
               <p className="text-gray-700">Members Networked</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">50+</p>
+              <p className="text-5xl font-bold text-gray-600">25+</p>
               <p className="text-gray-700">Expert Speakers</p>
             </div>
           </div>
@@ -143,9 +139,9 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <motion.h2 className="text-4xl font-semibold mb-6 text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Gallery</motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {[1,2,3,4].map(i => (
+            {[5,6,7,8].map(i => (
               <div key={i} className="h-48 bg-gray-200 relative overflow-hidden rounded-lg overflow-hidden relative">
-                <Image src={`/images/placeholder${i}.jpg`} alt="Gallery" fill className="object-cover" />
+                <Image src={`/event1_${i}.jpeg`} alt="Gallery" fill className="object-cover" />
               </div>
             ))}
           </div>

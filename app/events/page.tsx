@@ -23,6 +23,12 @@ const events = [
       '/event1_7.jpeg',
       '/event1_8.jpeg',
       '/event1_9.jpeg',
+      '/event1_10.jpeg',
+      '/event1_11.jpeg',
+      '/event1_12.jpeg',
+      '/event1_13.jpeg',
+      '/event1_14.jpeg',
+      '/event1_15.jpeg',
       '/event1_1.jpeg',
       '/event1_2.jpeg',
       '/event1_3.jpeg',
@@ -64,7 +70,7 @@ export default function EventsPage() {
           transition={{ duration: 0.5 }}
           className="font-bold mb-4 md:text-6xl text-4xl"
         >
-          Past & Upcoming Events
+          Recent & Upcoming Events
         </motion.h1>
         <p className="max-w-2xl mx-auto text-lg text-softtext/80">
           Explore the highlights and upcoming opportunities to connect with the BOG community.

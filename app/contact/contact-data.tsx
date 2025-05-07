@@ -9,15 +9,15 @@ const contactConfig = {
   socialLinks: [
     {
       platform: "Instagram",
-      url: "https://instagram.com/yourpage",
+      url: "https://www.instagram.com/bogjaipur?igsh=NmhmbmlpaDVvd2tv",
     },
-    {
-      platform: "LinkedIn",
-      url: "https://linkedin.com/company/yourpage",
-    },
+    // {
+    //   platform: "LinkedIn",
+    //   url: "https://linkedin.com/company/yourpage",
+    // },
     {
       platform: "Facebook",
-      url: "https://facebook.com/yourpage",
+      url: "https://www.facebook.com/bogjaipur",
     },
   ],
 }

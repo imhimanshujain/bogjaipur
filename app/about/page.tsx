@@ -39,18 +39,24 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* Image Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          <div className="h-72 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400 text-xl">
-            Team Photo
-          </div>
-          <div className="h-72 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400 text-xl">
-            Networking Event
-          </div>
-          <div className="h-72 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400 text-xl">
-            Founders' Meet
-          </div>
-        </div>
+  {[
+    { src: '/event1_12.jpeg', alt: 'Team Photo' },
+    { src: '/event1_14.jpeg', alt: 'Networking Event' },
+    { src: '/event1_3.jpeg', alt: "Founders' Meet" }
+  ].map(({ src, alt }, idx) => (
+    <div key={idx} className="relative h-72 rounded-xl overflow-hidden shadow-lg">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+
+
+      />
+    </div>
+  ))}
+</div>
 
         {/* Filler Quote */}
         <div className="bg-gray-50 rounded-2xl px-8 py-10 text-center mb-20">
@@ -80,15 +86,15 @@ export default function AboutUs() {
           <motion.h2 className="text-4xl font-semibold mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>Our Impact At A Glance</motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <p className="text-5xl font-bold text-gray-600">200+</p>
+              <p className="text-5xl font-bold text-gray-600">20+</p>
               <p className="text-gray-700">Events Hosted</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">500+</p>
+              <p className="text-5xl font-bold text-gray-600">100+</p>
               <p className="text-gray-700">Members Networked</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">50+</p>
+              <p className="text-5xl font-bold text-gray-600">25+</p>
               <p className="text-gray-700">Expert Speakers</p>
             </div>
           </div>

@@ -5,11 +5,7 @@ import { useRouter } from 'next/navigation'
 import { MonitorSmartphone, UsersRound, Rocket } from 'lucide-react'
 
 const services = [
-  {
-    title: 'Digital Marketing',
-    description: 'Grrow your brand with performance-driven strategies.',
-    icon: <MonitorSmartphone className="w-14 h-14 text-gray-600 drop-shadow-lg" />
-  },
+
   {
     title: 'Networking Events',
     description: 'Coonnect with Jaipur’s finest business owners.',

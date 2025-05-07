@@ -33,7 +33,7 @@ export default function HomePage() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-lg md:text-2xl mb-8"
           >
-            Collaborate, innovate, and grow with like-minded entrepreneurs. Become a part of BOG Jaipur.
+            Collaborate, innovate, and grow with like-minded entrepreneurs. Become a part of BOG.
           </motion.p>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -121,7 +121,7 @@ export default function HomePage() {
           >
             BOG Launch Event Highlights
           </motion.h2>
-          <Carousel images={['/event1_6.jpeg','/event1_7.jpeg','/event1_8.jpeg']} />
+          <Carousel images={['/event1_6.jpeg','/event1_7.jpeg','/event1_8.jpeg','/event1_10.jpeg','/event1_15.jpeg','/event1_20.jpeg','/event1_24.jpeg']} />
         </div>
       </section>
 
@@ -145,8 +145,8 @@ export default function HomePage() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="italic text-gray-700"
             >
-              “BOG Jaipur transformed my network overnight. The connections I've made are priceless.”
-              <cite className="block mt-2 font-semibold">— Priya Sharma, Founder</cite>
+              “BOG transformed my network overnight. The connections I've made are priceless.”
+              <cite className="block mt-2 font-semibold">— Bhavna Sugandha, Mentor</cite>
             </motion.blockquote>
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
@@ -156,7 +156,7 @@ export default function HomePage() {
               className="italic text-gray-700"
             >
               “Insightful, action-driven, and well-organized. A must for any serious entrepreneur.”
-              <cite className="block mt-2 font-semibold">— Aman Verma, CEO</cite>
+              <cite className="block mt-2 font-semibold">— Gaurav Arora, Director</cite>
             </motion.blockquote>
           </div>
         </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="mb-8"
         >
-          Join BOG Jaipur today and start your growth journey with us.
+          Join BOG today and start your growth journey with us.
         </motion.p>
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
