@@ -16,7 +16,7 @@ const impact = [
   {
     icon: <Users className="w-8 h-8 text-emerald-600" />,
     title: '75+ Active Members',
-    desc: 'From across Jaipur’s industries, collaborating under one platform.'
+    desc: 'From across industries, collaborating under one platform.'
   },
   {
     icon: <Briefcase className="w-8 h-8 text-gray-600" />,
@@ -35,7 +35,7 @@ export default function AboutUs() {
         {/* About Text */}
         <div className="text-lg leading-8 mb-16 text-center max-w-3xl mx-auto">
           <p>
-            Business Owners Group (BOG) Jaipur is a powerful collective of entrepreneurs and professionals who are building the future of the city’s business ecosystem. Through curated events, mentorship, collaboration, and a deeply supportive network — we help businesses scale with confidence.
+            Business Owners Group (BOG) is a powerful collective of entrepreneurs and professionals who are building the future of the city’s business ecosystem. Through curated events, mentorship, collaboration, and a deeply supportive network — we help businesses scale with confidence.
           </p>
         </div>
 

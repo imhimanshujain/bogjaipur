@@ -22,7 +22,7 @@ const mediaUpdates = [
     type: 'News Article',
     icon: <Newspaper className="w-7 h-7 text-gray-600" />,
     title: 'BOG event news',
-    desc: 'Business Owners Group (BOG) Jaipur was featured for its official launch on April 19, 2025, as a platform to unite and empower local entrepreneurs.',
+    desc: 'Business Owners Group (BOG) was featured for its official launch on April 19, 2025, as a platform to unite and empower local entrepreneurs.',
     date: 'April 19, 2025',
     image: '/news3.png',
     link: 'https://dainik.bhaskar.com/tRk427fiISb'

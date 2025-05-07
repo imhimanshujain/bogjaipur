@@ -25,7 +25,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold mb-4"
           >
-            Join the Leading Business Community in Jaipur
+            Join the Leading Business Community
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function HomePage() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-gray-700 mb-12 leading-relaxed"
           >
-            Business Owners Group Jaipur is a consortium of visionary entrepreneurs dedicated to fostering a supportive ecosystem where businesses can thrive. From networking mixers to leadership summits, our events are crafted to inspire action and deliver real results.
+            Business Owners Group is a consortium of visionary entrepreneurs dedicated to fostering a supportive ecosystem where businesses can thrive. From networking mixers to leadership summits, our events are crafted to inspire action and deliver real results.
           </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
@@ -81,7 +81,7 @@ export default function HomePage() {
             >
               <Users className="w-12 h-12 text-gray-800 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Network with Leaders</h3>
-              <p className="text-gray-600">Connect with top business minds from Jaipur and beyond.</p>
+              <p className="text-gray-600">Connect with top business minds.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

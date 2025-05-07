@@ -38,7 +38,7 @@ const groupedTeam = {
       role: 'Co-Director',
       image: '/lady2.jpeg',
       bio: 'Sejal brings energy and a member-first approach to the BOG community.',
-      quote: 'BOG is a genuine engine of entrepreneurship in Jaipur.'
+      quote: 'BOG is a genuine engine of entrepreneurship.'
     },
     {
       name: 'Neha Gupta',

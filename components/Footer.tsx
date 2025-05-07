@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h4 className="text-xl font-semibold mb-4">About BOG</h4>
-          <p>Empowering Jaipur's business community through connection, collaboration, and growth.</p>
+          <p>Empowering business community through connection, collaboration, and growth.</p>
         </div>
         <div>
           <h4 className="text-xl font-semibold mb-4">Quick Links</h4>

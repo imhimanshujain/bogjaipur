@@ -8,7 +8,7 @@ const services = [
 
   {
     title: 'Networking Events',
-    description: 'Coonnect with Jaipur’s finest business owners.',
+    description: 'Coonnect with one of the finest business owners.',
     icon: <UsersRound className="w-14 h-14 text-emerald-600 drop-shadow-lg" />
   },
   {
