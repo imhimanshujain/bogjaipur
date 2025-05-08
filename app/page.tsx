@@ -146,7 +146,7 @@ export default function HomePage() {
               className="italic text-gray-700"
             >
               “BOG transformed my network overnight. The connections I've made are priceless.”
-              <cite className="block mt-2 font-semibold">— Bhavna Sugandha, Mentor</cite>
+              <cite className="block mt-2 font-semibold">— Bhawana Sugandha, Mentor</cite>
             </motion.blockquote>
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}

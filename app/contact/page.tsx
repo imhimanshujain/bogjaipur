@@ -29,7 +29,7 @@ export default function ContactPage() {
             Let’s build something incredible. Together.
           </p>
           <motion.a
-            href="https://drive.google.com/drive/folders/1E_--QLGMuQM0VGiKxukaxbGhT9aBR7i3" // 🔁 Replace this with your actual Google Form link
+            href="https://forms.gle/wU53BG1qHYRaTmUWA" // 🔁 Replace this with your actual Google Form link
             target="_blank"
             className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
             rel="noopener noreferrer"
@@ -44,7 +44,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-gray-700">
               <MapPin className="text-indigo-500" />
-              <span>BOG CITY NETWORK LLP, E-2/269, roshanpath, chitrakoot,Jaipur, Rajasthan</span>
+              <span>BOG CITY NETWORK LLP<br/>E-2/269, roshanpath, chitrakoot,Jaipur, Rajasthan</span>
             </div>
             <div className="flex items-center gap-3 text-gray-700">
               <Phone className="text-gray-500" />
