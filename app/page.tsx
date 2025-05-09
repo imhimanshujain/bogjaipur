@@ -1,15 +1,119 @@
 // app/page.tsx
 "use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { ChevronRight, ArrowRight, Users, BookOpen, TrendingUp } from 'lucide-react'
-import Carousel from '@/components/Carousel'
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import {
+  ChevronRight,
+  ArrowRight,
+  Users,
+  BookOpen,
+  TrendingUp,
+  X,
+  HandHeart,
+  Hand
+} from 'lucide-react';
+import Carousel from '@/components/Carousel';
 
 export default function HomePage() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Show popup on initial load
+    if(!window.localStorage["sp"]) setShowPopup(true);
+  }, []);
+
   return (
     <>
+      {/* First-time Popup */}
+{showPopup && (
+  <div   className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div style={{background:'#ffff89'}} className="relative w-full max-w-2xl bg-white rounded-2xl overflow-hidden shadow-2xl p-15 ">
+      
+      {/* Fireworks background */}
+      <img
+        src="https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif"
+        alt="Fireworks"
+        className="absolute inset-0 w-full h-full object-cover opacity-100 pointer-events-none"
+      />
+
+      {/* Close button */}
+      <button
+        onClick={() => {setShowPopup(false); window.localStorage["sp"]=true}}
+        className="absolute top-4 right-4 text-gray-800 hover:text-gray-600 z-10"
+      >
+        <X size={28} />
+      </button>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center px-8 py-12 space-y-6">
+        
+        {/* Greeting */}
+        <div style={{color:'#612d2c'}} className="flex flex-column items-center space-x-3">
+          <div className='flex flex-col justify-center gap-8'>
+            <div className="text-6xl font-bold">
+              खम्मा घणी 
+                </div>              <Image
+                src="/namaste.png"
+                alt="Namaste"
+                width={64}
+                height={64}
+                className=" w-20 h-20" style={{margin: "0 auto"}}/>
+              <div  className="text-5xl font-bold">Business Owners!</div> 
+           </div>
+          
+        </div>
+        
+
+
+        {/* Logo + “is live!” */}
+
+        <div style={{color:'#612d2c', background:'#ffff89'}} className="flex flex-row align-middle space-x-6  items-center justify-center text-center mt-5">
+          <Image
+            src="/bog-logo.png"
+            alt="BOG Logo"
+            width={120}
+            height={50}
+            className=" w-40 h-24"
+          />
+          <div style={{color:"#5e5e5e"}} className="flex text-5xl font-bold align-middle">is</div>
+          <motion.div
+            className="flex text-5xl font-bold align-middle"
+            animate={{
+              color: [
+                '#ff004f',
+                '#eaff00',
+                '#00ffea',
+                '#ff006e',
+                '#00eaff',
+                '#ff00bf',
+              ],
+              textShadow: [
+                '0 0 16px #ff004f,0 0 32px #ff004f',
+                '0 0 16px #eaff00,0 0 32px #eaff00',
+                '0 0 16px #00ffea,0 0 32px #00ffea',
+                '0 0 16px #ff006e,0 0 32px #ff006e',
+                '0 0 16px #00eaff,0 0 32px #00eaff',
+                '0 0 16px #ff00bf,0 0 32px #ff00bf',
+              ],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          >
+            live!
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
       {/* Hero Section */}
       <section className="relative h-screen bg-gray-800 text-white flex items-center justify-center px-6">
         <Image
@@ -121,7 +225,17 @@ export default function HomePage() {
           >
             BOG Launch Event Highlights
           </motion.h2>
-          <Carousel images={['/event1_6.jpeg','/event1_7.jpeg','/event1_8.jpeg','/event1_10.jpeg','/event1_15.jpeg','/event1_20.jpeg','/event1_24.jpeg']} />
+          <Carousel
+            images={[
+              '/event1_6.jpeg',
+              '/event1_7.jpeg',
+              '/event1_8.jpeg',
+              '/event1_10.jpeg',
+              '/event1_15.jpeg',
+              '/event1_20.jpeg',
+              '/event1_24.jpeg',
+            ]}
+          />
         </div>
       </section>
 
@@ -146,7 +260,9 @@ export default function HomePage() {
               className="italic text-gray-700"
             >
               “BOG transformed my network overnight. The connections I've made are priceless.”
-              <cite className="block mt-2 font-semibold">— Bhawana Sugandha, Mentor</cite>
+              <cite className="block mt-2 font-semibold">
+                — Bhawana Sugandha, Mentor
+              </cite>
             </motion.blockquote>
             <motion.blockquote
               initial={{ opacity: 0, y: 20 }}
@@ -156,7 +272,9 @@ export default function HomePage() {
               className="italic text-gray-700"
             >
               “Insightful, action-driven, and well-organized. A must for any serious entrepreneur.”
-              <cite className="block mt-2 font-semibold">— Gaurav Arora, Director</cite>
+              <cite className="block mt-2 font-semibold">
+                — Gaurav Arora, Director
+              </cite>
             </motion.blockquote>
           </div>
         </div>
@@ -194,5 +312,5 @@ export default function HomePage() {
         </motion.div>
       </section>
     </>
-  )
+  );
 }
