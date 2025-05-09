@@ -102,7 +102,7 @@ export default function EventsPage() {
               {event.upcoming && (
                 <div className="mb-6">
                   <a
-                    href="https://forms.gle/your-google-form-link"
+                    href="https://forms.gle/wU53BG1qHYRaTmUWA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-black text-white text-sm px-6 py-3 rounded-full hover:bg-gray-800 transition"
