@@ -40,7 +40,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white underline"
           >
-            cybrotechs.com
+            Cybrotechs
           </a>
         </p>  
       </div>
