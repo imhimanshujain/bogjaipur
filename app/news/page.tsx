@@ -36,6 +36,16 @@ const mediaUpdates = [
     image: '/news2.png',
     link: 'https://youtu.be/NyKbuWLPiMk?si=Fnjq9a7k5at1mEnw'
   }
+  ,
+  {
+    type: 'Event Video',
+    icon: <Video className="w-7 h-7 text-red-500" />,
+    title: 'BOG Hawamahal Launch Video',
+    desc: 'Watch the official video highlights from the BOG Hawamahal Launch event.',
+    date: 'July 16, 2025',
+    image: '/press-release/PHOTO-2025-08-03-21-44-18.jpg',
+    link: 'https://www.youtube.com/watch?v=IepTbXM0kVs'
+  }
 ]
 
 export default function NewsPage() {

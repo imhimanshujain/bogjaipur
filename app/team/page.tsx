@@ -47,13 +47,6 @@ const groupedTeam = {
       bio: 'Neha ensures every member experience is smooth, impactful, and memorable.',
       quote: 'At BOG, every event becomes an opportunity for collaboration.'
     },
-    {
-      name: 'Siddarth Makharia',
-      role: 'Co-Director',
-      image: '/man5.jpeg',
-      bio: 'Siddarth plays a key role in organizing BOG’s community engagements with flair.',
-      quote: 'At BOG, every event becomes an opportunity for collaboration.'
-    }
   ],
   'Mentor': [
     {

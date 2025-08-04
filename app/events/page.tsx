@@ -9,16 +9,44 @@ import Image from 'next/image'
 const events = [
   {
     title: 'BOG Networking Meet (Upcoming)',
-    date: 'May 10, 2025',
+    date: 'August 15, 2025',
     description: 'An upcoming high-energy conference featuring startup founders, ecosystem leaders, and growth experts. Secure your seat now!',
     images: ['/meet.png'],
     upcoming: true
   },
   {
+    title: 'BOG Hawamahal Launch',
+    date: 'July 16, 2025',
+    description: 'The BOG Hawamahal Launch event marked a significant milestone, bringing together entrepreneurs and leaders for a memorable day of networking and celebration at the iconic Hawamahal.',
+    images: [
+      '/hawamahal-launch/01.jpg',
+      '/hawamahal-launch/02.jpg',
+      '/hawamahal-launch/03.jpg',
+      '/hawamahal-launch/04.jpg',
+      '/hawamahal-launch/05.jpg',
+      '/hawamahal-launch/06.jpg',
+      '/hawamahal-launch/07.jpg',
+      '/hawamahal-launch/08.jpg',
+      '/hawamahal-launch/09.jpg',
+      '/hawamahal-launch/10.jpg',
+      '/hawamahal-launch/11.jpg',
+      '/hawamahal-launch/12.jpg',
+      '/hawamahal-launch/13.jpg',
+      '/hawamahal-launch/14.jpg',
+      '/hawamahal-launch/15.jpg'
+    ]
+  },
+
+  {
     title: 'BOG Launch Event',
     date: 'April 19, 2025',
     description: 'An energetic networking event where over 150+ entrepreneurs came together to connect, collaborate, and create new business opportunities.',
     images: [
+      '/event1_1.jpeg',
+      '/event1_2.jpeg',
+      '/event1_3.jpeg',
+      '/event1_4.jpeg',
+      '/event1_5.jpeg',
       '/event1_6.jpeg',
       '/event1_7.jpeg',
       '/event1_8.jpeg',
@@ -29,21 +57,15 @@ const events = [
       '/event1_13.jpeg',
       '/event1_14.jpeg',
       '/event1_15.jpeg',
-      '/event1_1.jpeg',
-      '/event1_2.jpeg',
-      '/event1_3.jpeg',
-      '/event1_4.jpeg',
-      '/event1_5.jpeg',
 
     ],
-  }
+  },
 ]
-
 export default function EventsPage() {
   const [popupImages, setPopupImages] = useState([])
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
-  const openLightbox = (images, index) => {
+  const openLightbox = (images:any, index:any) => {
     setPopupImages(images)
     setActiveImageIndex(index)
   }
