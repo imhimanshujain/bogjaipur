@@ -94,7 +94,7 @@ export default function ContactPage() {
               <p className="text-gray-700">Events Hosted</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">100+</p>
+              <p className="text-5xl font-bold text-gray-600">300+</p>
               <p className="text-gray-700">Members Networked</p>
             </div>
             <div>

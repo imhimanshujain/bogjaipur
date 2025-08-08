@@ -10,7 +10,7 @@ import { ChevronRight, ArrowRight } from 'lucide-react'
 const impact = [
   {
     icon: <Trophy className="w-8 h-8 text-yellow-500" />,
-    title: '100+ Businesses Impacted',
+    title: '300+ Businesses Impacted',
     desc: 'We’ve helped over 100 businesses grow through networking & mentorship.'
   },
   {
@@ -90,7 +90,7 @@ export default function AboutUs() {
               <p className="text-gray-700">Events Hosted</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-gray-600">100+</p>
+              <p className="text-5xl font-bold text-gray-600">300+</p>
               <p className="text-gray-700">Members Networked</p>
             </div>
             <div>
